@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Form.css';
+import DisplayCard from './DisplayCard';
 
 function Form() {
 
@@ -13,20 +14,24 @@ function Form() {
     let [errorTextCvv, setErrorTextCvv] = useState('')
     let [errorTextDate, setErrorTextDate] = useState('')
 
-    function submit(e){
+    let [nameSub,setNameSub] = useState('')
+    let [numberSub, setNumberSub] = useState('')
+    let [monthSub, setMonthSub] = useState('')
+    let [yearSub, setYearSub] = useState('')
+    let [cvvSub, setCvvSub] = useState('')
 
+    const submit = ((e) =>{
         e.preventDefault()
-
-        // console.log(name)
-        // console.log(number)
-        // console.log(month)
-        // console.log(year)
-        // console.log(cvv)
 
         if(validation()){
             return
         }
-
+        setNameSub(name)
+        setNumberSub(number)
+        setMonthSub(month)
+        setYearSub(year)
+        setCvvSub(cvv)
+        
         setErrorTextName('')
         setErrorTextNumber('')
         setErrorTextCvv('')
@@ -36,8 +41,11 @@ function Form() {
         setMonth('')
         setYear('')
         setCvv('')
+       
+    })
 
-    }
+       
+    
 
     function validation(){
         if(name.length < 1){
@@ -67,15 +75,20 @@ function Form() {
         }
         return false
     }
+ 
+    // const ch = validation()   -->> will not run as it will check inputs are defined or not
+    // console.log(ch)
 
   return (
+    <>
     <div className='page'>
         <div className='leftPage'>
-            hello
+        <DisplayCard name={nameSub} number={numberSub} month={monthSub} 
+        year={yearSub} cvv={cvvSub}  ></DisplayCard>
         </div>
         <div className='rightPage'>
             <form className='form' onSubmit={submit}>
-                <section>
+            <section>
                     <label>
                         Cardholder Name <br></br>
                         <input id='name' placeholder='e.g. Jane Appleseed' type='text'
@@ -98,11 +111,11 @@ function Form() {
                 <section className='both'>
                     <label className='date'>
                         Exp.Date(MM/YY)   <br></br>
-                        <input className='date-in' placeholder='MM' type='text'
+                        <input className='date-in' placeholder='MM' type='number'
                         value={month} onChange={(e) =>{
                             setMonth(e.target.value)
                         }} >
-                            </input> <input className='date-in' placeholder='YY' type='text' 
+                            </input> <input className='date-in' placeholder='YY' type='number' 
                             value={year} onChange={(e) =>{
                                 setYear(e.target.value)
                             }} ></input> 
@@ -121,9 +134,11 @@ function Form() {
                 <section>
                     <button>Confirm</button>
                 </section>
+
             </form>
         </div>
     </div>
+    </>
   )
 }
 

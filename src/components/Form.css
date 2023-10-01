@@ -4,9 +4,10 @@
 .leftPage{
     min-height: 100vh;
     min-width: 35vw;
-    background-color: rgba(34, 9, 48, 1);
-    
-    
+    background: linear-gradient(169.47deg, #22052D 14.76%, #380C4A 25.62%, #3B0E46 29.25%,
+     #3D0F42 33.37%, #441436 40.15%, #33254E 46.18%, #2B2D59 52.47%, #292654 57.59%, #271F4F 62.33%, 
+     #240D37 74.06%, #22052D 88.22%, #22052D 125.39%, #22052D 154.65%, #22052D 154.67%);
+
 }
 .rightPage{
     min-height: 100vh;
@@ -28,24 +29,24 @@
     /* border: solid 1px violet; */
 }
 #number , #name {
-    width: 20vw;
-    height: 5vh;
+    width: 22vw;
+    height: 6vh;
     border-radius: 4px;
     border: 1px solid lightslategray;
     background-color: transparent;
     margin: 6px 0px;
 }
 .date-in{
-    width: 4.3vw;
-    height: 5vh;
+    width: 5vw;
+    height: 6vh;
     border-radius: 4px;
     border: 1px solid lightslategray;
     background-color: transparent;
     margin: 6px 0px;
 }
 .cvv-in{
-    width: 8vw;
-    height: 5vh;
+    width: 9vw;
+    height: 6vh;
     border-radius: 4px;
     border: 1px solid lightslategray;
     background-color: transparent;
@@ -58,9 +59,9 @@
     margin-left: 1vw;
 }
 button{
-    width: 21vw;
-    height: 6vh;
-    border-radius: 4px;
+    width: 23.3vw;
+    height: 7vh;
+    border-radius: 6px;
     border: 1px solid lightslategray;
     background: rgba(34, 9, 48, 1);
     color: aliceblue;
