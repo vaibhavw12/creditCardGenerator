@@ -10,6 +10,9 @@
     background: linear-gradient(127.75deg, rgba(94, 144, 230, 1) 10.57%, rgba(99, 40, 192, 1) 30.11%,
     rgba(234, 113, 103, 1) 70%, rgba(94, 144, 230, 1) 90.57%); 
 }
+.card :hover{
+    color: rgb(34, 183, 171);
+}
 .circle{
     border:rgba(94, 144, 230, 1);
     border-radius: 100px;

@@ -13,6 +13,7 @@ function Form() {
     let [errorTextName, setErrorTextName] = useState('')
     let [errorTextCvv, setErrorTextCvv] = useState('')
     let [errorTextDate, setErrorTextDate] = useState('')
+    let [successText, setSuccessText] = useState('')
 
     let [nameSub,setNameSub] = useState('')
     let [numberSub, setNumberSub] = useState('')
@@ -26,6 +27,7 @@ function Form() {
         if(validation()){
             return
         }
+        setSuccessText("Your request has been confirmed")
         setNameSub(name)
         setNumberSub(number)
         setMonthSub(month)
@@ -54,19 +56,19 @@ function Form() {
             setErrorTextCvv('')
             setErrorTextDate('')
             return true
-        }if(number.length !== 16){
+        }else if(number.length !== 16){
             setErrorTextNumber('enter a valid card number')
             setErrorTextName('')
             setErrorTextCvv('')
             setErrorTextDate('')
             return true
-        }if(cvv.length !== 3){
+        }else if(cvv.length !== 3){
             setErrorTextCvv('enter a valid card cvv')
             setErrorTextName('')
             setErrorTextNumber('')
             setErrorTextDate('')
             return true
-        }if(month.length !== 2 || year.length !== 2 || parseInt(month) > 12){
+        }else if(month.length !== 2 || year.length !== 2 || parseInt(month) > 12){
             setErrorTextDate('enter a valid card date')
             setErrorTextName('')
             setErrorTextNumber('')
@@ -134,8 +136,9 @@ function Form() {
                 <section>
                     <button>Confirm</button>
                 </section>
-
+                <p className='success'>{successText}</p>
             </form>
+            
         </div>
     </div>
     </>
